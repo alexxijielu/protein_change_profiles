@@ -30,8 +30,9 @@ def packageGeneMatrix(fileName, headers, genelist, genematrix):
     file.write('\t'.join(headers) + '\n')
     for i in range(0, genematrix.shape[0]):
         file.write(genelist[i] + '\t')
-        for j in genematrix[i]:
+        for j in genematrix[i][:-1]:
             file.write((str(j)) + '\t')
+        file.write(str(genematrix[i][-1]))
         file.write('\n')
 
     print("Written to file + " + fileName)

@@ -1,8 +1,8 @@
 '''Given a set of single cell features extracted by the image analysis software described in Handfield et al. 2013
 (Code: http://www.moseslab.csb.utoronto.ca/louis-f/unsupervised/), select and calculate the truncated average for
-the relevant features from the _feat_dataC.txt file.
+the relevant features from the features file.
 Input:
-A directory containing all of the _feat_dataC.txt files for the images you want to analyze.
+A directory containing all of the .txt files for the images you want to analyze. (Only the text files)
 
 Calculates for each image the truncated average of features over 5 bins of cell cycle for each mother/bud cells:
 N_Self_DST_Mean, N_Masc_DST_Mean, N_Edge_DST_Mean, N_Cent_DST_Mean, N_Budn_DST_Mean
