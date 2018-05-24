@@ -7,6 +7,26 @@ A directory containing all of the .txt files for the images you want to analyze.
 Calculates for each image the truncated average of features over 5 bins of cell cycle for each mother/bud cells:
 N_Self_DST_Mean, N_Masc_DST_Mean, N_Edge_DST_Mean, N_Cent_DST_Mean, N_Budn_DST_Mean
 (i.e. a total of 50 features)
+
+Author: Alex Lu
+Email: alexlu@cs.toronto.edu
+Last Updated: May 23th, 2018
+
+Copyright (C) 2018 Alex Lu
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see
+<https://www.gnu.org/licenses/>.
 '''
 
 import numpy as np

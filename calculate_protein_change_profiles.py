@@ -1,4 +1,23 @@
-'''Given the profiled features for two screens, calculate the protein change profiles between the two screens.'''
+'''Given the profiled features for two screens, calculate the protein change profiles between the two screens.
+Author: Alex Lu
+Email: alexlu@cs.toronto.edu
+Last Updated: May 23th, 2018
+
+Copyright (C) 2018 Alex Lu
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see
+<https://www.gnu.org/licenses/>.'''
 
 from util import openGeneMatrix
 from util import packageGeneMatrix
@@ -85,10 +104,12 @@ if __name__ == '__main__':
     parser.add_argument("output", help="Output to write to.", type=str)
     args = parser.parse_args()
 
+    print ("Calculating protein localization change profiles...")
     genelist, sorted_ref, sorted_cond = filter_matrices(args.reference, args.condition)
     subtracted = subtract_matrices(sorted_ref, sorted_cond)
     means, variances = modWeights(50, subtracted, sorted_ref)
     zscores = calculateModZScores(subtracted, means, variances)
 
+    print ("Done!")
     headers, _, _ = openGeneMatrix(args.reference)
     packageGeneMatrix(args.output, headers, genelist, zscores)
