@@ -185,6 +185,10 @@ if __name__ == '__main__':
             if final_features == []:
                 print ("File skipped: Not enough valid cells in ", file)
             else:
+                try:
+                    file = file.split(".")[0]
+                except:
+                    pass
                 output.write(file)
                 output.write("\t")
                 for feature in final_features[:-1]:
