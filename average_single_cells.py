@@ -131,16 +131,16 @@ def tmean_bins(features, bins):
     try:
         # Go through each feature and append the tmean in order
         for i in range(6, 11):
-            tmean_features.append(stats.trim_mean(np.array(b0[:, i].astype('float')), 0.05) / 10)
-            tmean_features.append(stats.trim_mean(np.array(b1[:, i].astype('float')), 0.05) / 10)
-            tmean_features.append(stats.trim_mean(np.array(b2[:, i].astype('float')), 0.05) / 10)
-            tmean_features.append(stats.trim_mean(np.array(b3[:, i].astype('float')), 0.05) / 10)
-            tmean_features.append(stats.trim_mean(np.array(b4[:, i].astype('float')), 0.05) / 10)
-            tmean_features.append(stats.trim_mean(np.array(m0[:, i].astype('float')), 0.05) / 10)
-            tmean_features.append(stats.trim_mean(np.array(m1[:, i].astype('float')), 0.05) / 10)
-            tmean_features.append(stats.trim_mean(np.array(m2[:, i].astype('float')), 0.05) / 10)
-            tmean_features.append(stats.trim_mean(np.array(m3[:, i].astype('float')), 0.05) / 10)
-            tmean_features.append(stats.trim_mean(np.array(m4[:, i].astype('float')), 0.05) / 10)
+            tmean_features.append(stats.trim_mean(np.array(b0[:, i].astype('float')), 0.05))
+            tmean_features.append(stats.trim_mean(np.array(b1[:, i].astype('float')), 0.05))
+            tmean_features.append(stats.trim_mean(np.array(b2[:, i].astype('float')), 0.05))
+            tmean_features.append(stats.trim_mean(np.array(b3[:, i].astype('float')), 0.05))
+            tmean_features.append(stats.trim_mean(np.array(b4[:, i].astype('float')), 0.05))
+            tmean_features.append(stats.trim_mean(np.array(m0[:, i].astype('float')), 0.05))
+            tmean_features.append(stats.trim_mean(np.array(m1[:, i].astype('float')), 0.05))
+            tmean_features.append(stats.trim_mean(np.array(m2[:, i].astype('float')), 0.05))
+            tmean_features.append(stats.trim_mean(np.array(m3[:, i].astype('float')), 0.05))
+            tmean_features.append(stats.trim_mean(np.array(m4[:, i].astype('float')), 0.05))
     except:
         # If there are any empty bins (will cause exception), we'll return an empty vector
         tmean_features = []
@@ -150,7 +150,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Convert a directory of single-cell files into a truncated'
                                                  'mean summary file for each protein.')
     parser.add_argument("input", help="Input directory containing files", type=str)
-    parser.add_argument("output", help="Output to write. to", type=str)
+    parser.add_argument("output", help="Output to write to.", type=str)
     args = parser.parse_args()
 
     inputdir = args.input
