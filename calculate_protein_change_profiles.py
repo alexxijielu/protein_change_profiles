@@ -99,15 +99,16 @@ def calculateModZScores(geneMatrix, means, MAD):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Create protein localization change profiles for a pair of files.'
                                                  'Calculates z-scores for each feature in each protein.')
-    parser.add_argument("reference", help="Reference wild-type screen", type=str)
-    parser.add_argument("condition", help="Condition screen", type=str)
+    parser.add_argument("reference", help="Reference untreated wild-type screen", type=str)
+    parser.add_argument("condition", help="Perturbation screen", type=str)
     parser.add_argument("output", help="Output to write to.", type=str)
+    parser.add_argument("k", help="k parameter for knn normalization", type=int, default=50)
     args = parser.parse_args()
 
     print ("Calculating protein localization change profiles...")
     genelist, sorted_ref, sorted_cond = filter_matrices(args.reference, args.condition)
     subtracted = subtract_matrices(sorted_ref, sorted_cond)
-    means, variances = modWeights(50, subtracted, sorted_ref)
+    means, variances = modWeights(args.k, subtracted, sorted_ref)
     zscores = calculateModZScores(subtracted, means, variances)
 
     print ("Done!")
