@@ -91,3 +91,7 @@ if __name__ == '__main__':
             subprocess.call(shlex.split(command))
             command = "rm " + inputdir + ID + "_ellfit.mcv"
             subprocess.call(shlex.split(command))
+            command = "rm " + inputdir + ID + "_cellseg.tiff"
+            subprocess.call(shlex.split(command))
+            command = "rm " + inputdir + ID + "_seg.tiff"
+            subprocess.call(shlex.split(command))
