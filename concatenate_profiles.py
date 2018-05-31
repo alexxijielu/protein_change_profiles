@@ -71,9 +71,9 @@ def sort_proteins (screen_list, reference_list):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--files', nargs='+', help="List of files to concatencate")
-    parser.add_argument("--output", help="Output to write to.", type=str)
-    parser.add_argument("--reference", help="Location of list containing all genes in screens.", type=str)
+    parser.add_argument('-files', nargs='+', help="List of files to concatencate", required=True)
+    parser.add_argument("-output", help="Output to write to.", type=str, required=True)
+    parser.add_argument("-reference", help="Location of list containing all genes in screens.", type=str, required=True)
     args = parser.parse_args()
 
     all_matrix, all_headers, reference = sort_proteins(args.files, args.reference)

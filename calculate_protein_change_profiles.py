@@ -102,7 +102,7 @@ if __name__ == '__main__':
     parser.add_argument("reference", help="Reference untreated wild-type screen", type=str)
     parser.add_argument("condition", help="Perturbation screen", type=str)
     parser.add_argument("output", help="Output to write to.", type=str)
-    parser.add_argument("k", help="k parameter for knn normalization", type=int, default=50)
+    parser.add_argument("--k", help="k parameter for knn normalization", type=int, default=50)
     args = parser.parse_args()
 
     print ("Calculating protein localization change profiles...")
